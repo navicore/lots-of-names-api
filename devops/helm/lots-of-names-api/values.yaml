@@ -1,0 +1,5 @@
+image:
+  repository: navicore/lots-of-names-api
+  tag: latest
+
+affinity: "lots-of-names-api"
