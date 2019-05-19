@@ -2,9 +2,11 @@ package tech.navicore.lotsofnames.api.models
 
 import java.util.{Date, UUID}
 
-final case class Message(
+final case class Name (
     id: UUID,
     datetime: Date,
-    body: String
+    sourceId: String,
+    name: String
 )
 
+final case class Query(sourceId: String)

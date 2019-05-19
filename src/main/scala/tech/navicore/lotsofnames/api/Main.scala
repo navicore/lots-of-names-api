@@ -5,7 +5,7 @@ import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 import com.typesafe.scalalogging.LazyLogging
-import tech.navicore.lotsofnames.api.models.{JsonSupport, Message}
+import tech.navicore.lotsofnames.api.models._
 import tech.navicore.lotsofnames.api.routes.{NamesRoute, NamesSegmentRoute}
 import scala.concurrent.ExecutionContextExecutor
 

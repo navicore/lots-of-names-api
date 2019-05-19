@@ -6,8 +6,9 @@ import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import akka.http.scaladsl.server.{Directives, Route}
 import com.typesafe.scalalogging.LazyLogging
 import tech.navicore.lotsofnames.api.ErrorSupport
-import tech.navicore.lotsofnames.api.models.{JsonSupport, Message}
+import tech.navicore.lotsofnames.api.models._
 import spray.json._
+import tech.navicore.lotsofnames.LotsOfPeople
 
 object NamesSegmentRoute
     extends JsonSupport
@@ -16,25 +17,17 @@ object NamesSegmentRoute
     with ErrorSupport {
 
   def apply: Route =
-    path(urlpath / Segment) { name =>
-      logRequest(s"$urlpath / $name") {
+    path(urlpath / Segment) { sourceId =>
+      logRequest(s"$urlpath / $sourceId") {
         handleErrors {
           cors(corsSettings) {
             get {
-              val response =
-                Message(java.util.UUID.randomUUID(), new Date(), s"hiya $name")
+              val response = Name(java.util.UUID.randomUUID(),
+                                  new Date(),
+                                  sourceId,
+                                  LotsOfPeople(sourceId))
               complete(response.toJson.prettyPrint)
-            } ~
-              post {
-                decodeRequest {
-                  entity(as[Message]) { m =>
-                    val response = Message(java.util.UUID.randomUUID(),
-                                           new Date(),
-                                           s"${m.body} to you, too!")
-                    complete(response.toJson.prettyPrint)
-                  }
-                }
-              }
+            }
           }
         }
       }

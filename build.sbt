@@ -23,6 +23,8 @@ libraryDependencies ++=
     "com.typesafe" % "config" % "1.3.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.0",
 
+    "tech.navicore" %% "lotsofnames" % "0.2.0",
+    
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
     "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
@@ -33,7 +35,6 @@ libraryDependencies ++=
     "com.github.nscala-time" %% "nscala-time" % "2.20.0",
 
     "org.scalatest" %% "scalatest" % "3.0.5" % "test"
-
   )
 
 dependencyOverrides ++= Seq(
