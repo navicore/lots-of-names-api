@@ -9,7 +9,7 @@ import tech.navicore.lotsofnames.api.models._
 import tech.navicore.lotsofnames.api.routes.{NamesRoute, NamesSegmentRoute}
 import scala.concurrent.ExecutionContextExecutor
 
-object Main extends LazyLogging with JsonSupport with ErrorSupport {
+object Main extends LazyLogging with JsonSupport with HttpSupport {
 
   def main(args: Array[String]) {
 

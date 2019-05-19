@@ -3,21 +3,21 @@ package tech.navicore.lotsofnames.api.routes
 import java.util.Date
 
 import akka.http.scaladsl.model.{ContentTypes, HttpEntity}
-import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import akka.http.scaladsl.server.{Directives, Route}
+import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import com.typesafe.scalalogging.LazyLogging
-import tech.navicore.lotsofnames.api.ErrorSupport
-import tech.navicore.lotsofnames.api.models._
 import spray.json._
 import tech.navicore.lotsofnames.LotsOfPeople
+import tech.navicore.lotsofnames.api.HttpSupport
+import tech.navicore.lotsofnames.api.models.{Name, _}
 
 object NamesSegmentRoute
     extends JsonSupport
     with LazyLogging
     with Directives
-    with ErrorSupport {
+    with HttpSupport {
 
-  def apply: Route =
+  def apply: Route = {
     path(urlpath / Segment) { sourceId =>
       logRequest(s"$urlpath / $sourceId") {
         handleErrors {
@@ -27,10 +27,13 @@ object NamesSegmentRoute
                                   new Date(),
                                   sourceId,
                                   LotsOfPeople(sourceId))
-              complete(HttpEntity(ContentTypes.`application/json`, response.toJson.prettyPrint))
+              complete(
+                HttpEntity(ContentTypes.`application/json`,
+                           response.toJson.prettyPrint))
             }
           }
         }
       }
     }
+  }
 }

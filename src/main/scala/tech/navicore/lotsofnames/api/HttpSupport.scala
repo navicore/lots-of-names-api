@@ -1,17 +1,20 @@
 package tech.navicore.lotsofnames.api
 
-import collection.JavaConverters._
 import java.io.IOException
+
 import akka.http.scaladsl.model._
-import akka.http.scaladsl.model.headers.{HttpOrigin, HttpOriginRange}
+import akka.http.scaladsl.model.headers.HttpOrigin
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.{Directive, ExceptionHandler, RejectionHandler, Route}
 import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
+import ch.megard.akka.http.cors.scaladsl.model.HttpOriginMatcher
 import ch.megard.akka.http.cors.scaladsl.settings.CorsSettings
 import com.typesafe.config.{Config, ConfigFactory}
 import com.typesafe.scalalogging.LazyLogging
 
-trait ErrorSupport extends LazyLogging {
+import scala.collection.JavaConverters._
+
+trait HttpSupport extends LazyLogging {
 
   val conf: Config = ConfigFactory.load()
   val corsOriginList: List[HttpOrigin] = conf
@@ -23,7 +26,8 @@ trait ErrorSupport extends LazyLogging {
   val urlpath: String = conf.getString("main.path")
   val port: Int = conf.getInt("main.port")
 
-  val corsSettings: CorsSettings = CorsSettings.defaultSettings.withAllowedOrigins(HttpOriginRange(corsOriginList: _*))
+  val corsSettings: CorsSettings = CorsSettings.defaultSettings
+    .withAllowedOrigins(HttpOriginMatcher(corsOriginList: _*))
 
   val rejectionHandler
     : RejectionHandler = corsRejectionHandler withFallback RejectionHandler.default
@@ -49,5 +53,5 @@ trait ErrorSupport extends LazyLogging {
         complete("ok")
       }
     }
-}
 
+}
