@@ -30,11 +30,10 @@ object NamesRoute
             } ~
               post {
                 decodeRequest {
-                  entity(as[Query]) { m =>
-                    val response = Name(java.util.UUID.randomUUID(),
-                                        new Date(),
-                                        m.sourceId,
-                                        LotsOfPeople(m.sourceId))
+                  entity(as[Array[Query]]) { q =>
+                    val response = q.map(m => {
+                       Name(java.util.UUID.randomUUID(), new Date(), m.sourceId, LotsOfPeople(m.sourceId))
+                    })
                     complete(response.toJson.prettyPrint)
                   }
                 }
