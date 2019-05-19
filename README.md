@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/navicore/lots-of-names-api.svg?branch=master)](https://travis-ci.org/navicore/lots-of-names-api)
+
 LotsOfNamesApi
 =======
 
