@@ -2,6 +2,7 @@ package tech.navicore.lotsofnames.api.routes
 
 import java.util.Date
 
+import akka.http.scaladsl.model.{ContentTypes, HttpEntity}
 import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import akka.http.scaladsl.server.{Directives, Route}
 import com.typesafe.scalalogging.LazyLogging
@@ -26,7 +27,7 @@ object NamesSegmentRoute
                                   new Date(),
                                   sourceId,
                                   LotsOfPeople(sourceId))
-              complete(response.toJson.prettyPrint)
+              complete(HttpEntity(ContentTypes.`application/json`, response.toJson.prettyPrint))
             }
           }
         }

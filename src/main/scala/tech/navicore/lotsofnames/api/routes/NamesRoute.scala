@@ -34,7 +34,7 @@ object NamesRoute
                     val response = q.map(m => {
                        Name(java.util.UUID.randomUUID(), new Date(), m.sourceId, LotsOfPeople(m.sourceId))
                     })
-                    complete(response.toJson.prettyPrint)
+                    complete(HttpEntity(ContentTypes.`application/json`, response.toJson.prettyPrint))
                   }
                 }
               }
