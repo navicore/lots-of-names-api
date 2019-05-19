@@ -9,4 +9,4 @@ GET /names
 
 --
 
-GET /names/1234567890abcd
+GET /names/1234567890
