@@ -1,5 +1,5 @@
-#https://lotsofnames.navicore.tech
-http://localhost:8080
+https://lotsofnames.navicore.tech
+#http://localhost:8080
 
 -ks
 
@@ -15,3 +15,8 @@ GET /names
 --
 
 GET /names/1234567890
+
+--
+
+GET /names/7AC7E2AD-50E2-4515-8392-A83B38CE9144
+
