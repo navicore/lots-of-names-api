@@ -7,11 +7,11 @@ cache:
     - $HOME/.sbt/boot/
 
 jdk:
-  - oraclejdk8
+  - oraclejdk13
 
 script:
   ## This runs the template with the default parameters, and runs test within the templated app.
-  - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test assembly
+  - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test +assembly
   - docker build -t navicore/lots-of-names-api .
 
   # Tricks to avoid unnecessary cache updates
