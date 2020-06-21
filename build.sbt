@@ -11,7 +11,7 @@ parallelExecution in test := false
 
 version := "1.0"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.12.11"
 val akkaVersion = "2.5.22"
 val akkaHttpVersion = "10.1.8"
 val swaggerVersion = "2.0.8"
@@ -24,7 +24,7 @@ libraryDependencies ++=
     "com.typesafe" % "config" % "1.3.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.0",
 
-    "tech.navicore" %% "lotsofnames" % "0.3.0",
+    "tech.navicore" %% "lotsofnames" % "2.0.0",
 
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
