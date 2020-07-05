@@ -1,5 +1,5 @@
-#https://lotsofnames.navicore.tech
-http://localhost:8080
+https://lotsofnames.navicore.tech
+#http://localhost:8080
 
 -ks
 
@@ -7,14 +7,19 @@ Content-Type: application/json; charset=utf-8
 
 --
 --
-
 GET /names
 
 --
-
 GET /names/1234567890
 
 --
-
 GET /names/7AC7E2AD-50E2-4515-8392-A83B38CE9144
 
+--
+GET /names/cc2cb642-8f86-4bc4-8a31-624dc992704d
+
+--
+GET /names/Trump%20Zorayda
+
+--
+GET /names/Bothe%20Amy%20Northern
