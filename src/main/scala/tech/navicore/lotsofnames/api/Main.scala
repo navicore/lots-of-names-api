@@ -19,10 +19,9 @@ object Main extends LazyLogging with JsonSupport with HttpSupport {
 
     val route =
       HealthCheck ~
-      NamesRoute.apply ~
-      NamesSegmentRoute.apply
+        NamesRoute.apply ~
+        NamesSegmentRoute.apply
 
     Http().bindAndHandle(route, "0.0.0.0", port)
   }
 }
-
