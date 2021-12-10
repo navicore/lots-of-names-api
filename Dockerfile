@@ -10,6 +10,6 @@ COPY target/scala-2.12/*.jar /app/
 
 WORKDIR /app
 
-CMD java -jar ./LotsOfNamesApi.jar
 # override CMD from your run command, or k8s yaml, or marathon json, etc...
+CMD java -Dlog4j2.formatMsgNoLookups=true -jar ./LotsOfNamesApi.jar
 
