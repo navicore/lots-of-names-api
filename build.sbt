@@ -19,9 +19,9 @@ val swaggerVersion = "2.0.8"
 
 libraryDependencies ++=
   Seq(
+    "com.typesafe" % "config" % "1.3.4",
     "ch.qos.logback" % "logback-classic" % "1.2.11",
     "ch.megard" %% "akka-http-cors" % "0.4.3",
-    "com.typesafe" % "config" % "1.3.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.0",
     "tech.navicore" %% "lotsofnames" % "3.0.0",
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
