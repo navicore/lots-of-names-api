@@ -1,14 +1,14 @@
 name := "LotsOfNamesApi"
 
 fork := true
-javaOptions in test ++= Seq(
+(test / javaOptions) ++= Seq(
   "-Xms512M",
   "-Xmx2048M",
   "-XX:MaxPermSize=2048M",
   "-XX:+CMSClassUnloadingEnabled"
 )
 
-parallelExecution in test := false
+(test / parallelExecution) := false
 
 version := "1.0"
 
@@ -41,5 +41,5 @@ dependencyOverrides ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion
 )
 
-mainClass in assembly := Some("tech.navicore.lotsofnames.api.Main")
-assemblyJarName in assembly := "LotsOfNamesApi.jar"
+(assembly / mainClass) := Some("tech.navicore.lotsofnames.api.Main")
+(assembly / assemblyJarName) := "LotsOfNamesApi.jar"
