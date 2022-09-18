@@ -12,7 +12,6 @@ fork := true
 
 version := "1.0"
 
-
 scalaVersion := "2.12.17"
 val akkaVersion = "2.6.20"
 val akkaHttpVersion = "10.2.10"
@@ -23,7 +22,7 @@ libraryDependencies ++=
     "tech.navicore" %% "lotsofnames" % "3.0.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
     "com.typesafe" % "config" % "1.4.2",
-    "ch.qos.logback" % "logback-classic" % "1.2.11",
+    "ch.qos.logback" % "logback-classic" % "1.4.1",
     "ch.megard" %% "akka-http-cors" % "1.1.3",
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
@@ -43,3 +42,8 @@ dependencyOverrides ++= Seq(
 
 (assembly / mainClass) := Some("tech.navicore.lotsofnames.api.Main")
 (assembly / assemblyJarName) := "LotsOfNamesApi.jar"
+
+(assembly / assemblyMergeStrategy) := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x                             => MergeStrategy.first
+}
