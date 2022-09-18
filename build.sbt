@@ -12,7 +12,6 @@ fork := true
 
 version := "1.0"
 
-
 scalaVersion := "2.12.16"
 val akkaVersion = "2.6.20"
 val akkaHttpVersion = "10.2.10"
@@ -43,3 +42,8 @@ dependencyOverrides ++= Seq(
 
 (assembly / mainClass) := Some("tech.navicore.lotsofnames.api.Main")
 (assembly / assemblyJarName) := "LotsOfNamesApi.jar"
+
+(assembly / assemblyMergeStrategy) := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x                             => MergeStrategy.first
+}
