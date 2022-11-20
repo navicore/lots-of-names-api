@@ -22,7 +22,7 @@ libraryDependencies ++=
     "tech.navicore" %% "lotsofnames" % "3.0.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
     "com.typesafe" % "config" % "1.4.2",
-    "ch.qos.logback" % "logback-classic" % "1.4.4",
+    "ch.qos.logback" % "logback-classic" % "1.4.5",
     "ch.megard" %% "akka-http-cors" % "1.1.3",
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-stream" % akkaVersion,
