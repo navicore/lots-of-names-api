@@ -12,7 +12,7 @@ fork := true
 
 version := "1.0"
 
-scalaVersion := "2.12.17"
+scalaVersion := "2.13.10"
 val akkaVersion = "2.7.0"
 val akkaHttpVersion = "10.4.0"
 val swaggerVersion = "2.0.8"
