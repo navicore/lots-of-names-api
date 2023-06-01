@@ -32,7 +32,7 @@ libraryDependencies ++=
     "org.json4s" %% "json4s-native" % "4.0.6",
     "org.json4s" %% "json4s-native" % "4.0.6",
     "com.github.nscala-time" %% "nscala-time" % "2.32.0",
-    "org.scalatest" %% "scalatest" % "3.2.15" % "test"
+    "org.scalatest" %% "scalatest" % "3.2.16" % "test"
   )
 
 dependencyOverrides ++= Seq(
