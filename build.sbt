@@ -14,7 +14,7 @@ version := "1.0"
 
 scalaVersion := "2.12.17"
 val akkaVersion = "2.6.20"
-val akkaHttpVersion = "10.5.1"
+val akkaHttpVersion = "10.5.2"
 val swaggerVersion = "2.0.8"
 
 libraryDependencies ++=
