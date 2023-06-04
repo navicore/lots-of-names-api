@@ -1,4 +1,5 @@
-https://lotsofnames.navicore.tech
+#https://lotsofnames.navicore.tech
+https://dev.navicore.tech
 #http://localhost:8080
 
 -ks
