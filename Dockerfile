@@ -1,4 +1,4 @@
-FROM eclipse-temurin:20-jre
+FROM eclipse-temurin:17-jre
 
 MAINTAINER Ed Sweeney <ed@onextent.com>
 
