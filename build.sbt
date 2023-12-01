@@ -21,7 +21,7 @@ libraryDependencies ++=
   Seq(
     "ch.megard" %% "akka-http-cors" % "0.4.3",
     "ch.qos.logback" % "logback-classic" % "1.2.3",
-    "com.typesafe" % "config" % "1.3.3",
+    "com.typesafe" % "config" % "1.4.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
     "tech.navicore" %% "lotsofnames" % "3.0.6",
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
