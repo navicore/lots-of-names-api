@@ -1,3 +1,8 @@
+<!-- ghmig:moved -->
+> **This repository has moved to [https://git.navicore.tech/navicore/lots-of-names-api](https://git.navicore.tech/navicore/lots-of-names-api).**
+>
+> The GitHub copy is archived and no longer maintained.
+
 [![Build Status](https://travis-ci.org/navicore/lots-of-names-api.svg?branch=master)](https://travis-ci.org/navicore/lots-of-names-api)
 
 LotsOfNamesApi
@@ -77,4 +82,3 @@ for code stats:
 ```
 sbt stats
 ```
-
